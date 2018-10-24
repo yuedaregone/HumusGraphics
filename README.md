@@ -1,3 +1,3 @@
-# TestCP
+# humus project
 
-create a cross platform generate project template
+Framework3  http://www.humus.name 

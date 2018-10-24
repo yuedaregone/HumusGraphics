@@ -1,5 +1,5 @@
 
-solution "testcp"
+solution "humus"
 	configurations {
 		"Debug",
 		"Release",
@@ -17,47 +17,6 @@ SOLUTION_DIR = path.getabsolute("..")
 dofile "toolchain.lua"
 toolchain(path.join(SOLUTION_DIR, "build"), "")
 
---dofile "**.lua"
+dofile "humus.lua"
 
-PROJ_DIR = SOLUTION_DIR
-project "testcp"
-	kind "ConsoleApp" --kind "StaticLib"
-
-	debugdir (path.join(PROJ_DIR, "src"))	
-
-	
-	includedirs {
-		path.join(PROJ_DIR, "src"),		
-	}
-
-	files {
-		path.join(PROJ_DIR, "src/testcp.cpp"),
-		--path.join(PROJ_DIR, "src/**.h"),
-	}
---[[
-	links {
-		"bx",
-	}]]
-
-	configuration { "vs* or mingw*" }
-		links {
-			"psapi",
-		}
-		buildoptions {
-			"/wd4244",
-		}		
-
-	configuration { "linux-*" }
-		links {
-			"pthread",
-		}
-
-	configuration { "osx" }
-		links {
-			"Cocoa.framework",
-		}
-
-	configuration {}
-
-	--strip()
 
