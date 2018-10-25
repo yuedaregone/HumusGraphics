@@ -103,4 +103,4 @@ project "humus"
 
 	configuration {}
 
-	--strip()
+	strip()
